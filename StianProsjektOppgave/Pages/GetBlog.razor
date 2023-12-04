@@ -1,0 +1,36 @@
+﻿@page "/GetBlog"
+@using StianProsjektAPI.Models.Entities
+@using StianProsjektAPI.Services
+@inject HttpClient httpClient
+<h1>Test</h1>
+
+<button @onclick="GetData">Get Data</button>
+
+<p>@resultMessage</p>
+@if (data != null)
+{
+    <ul>
+        @foreach (var blog in data)
+        {
+            <li>@blog.BlogName</li>
+        }
+    </ul> 
+}
+
+@code {
+    private IEnumerable<Blog>? data;
+    private string resultMessage = "";
+
+    private async Task GetData()
+    {
+        try
+        {
+            data = await httpClient.GetFromJsonAsync<IEnumerable<Blog>>("https://localhost:7241/api/Blog");
+            resultMessage = "Success";
+        }
+        catch (Exception e)
+        {
+            resultMessage = e.Message;
+        }
+    }
+}
