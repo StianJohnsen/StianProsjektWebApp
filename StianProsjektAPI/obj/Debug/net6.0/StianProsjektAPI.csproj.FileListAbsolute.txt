@@ -10,6 +10,7 @@ C:\Users\stian\source\repos\StianProsjektOppgave\StianProsjektAPI\bin\Debug\net6
 C:\Users\stian\source\repos\StianProsjektOppgave\StianProsjektAPI\bin\Debug\net6.0\Humanizer.dll
 C:\Users\stian\source\repos\StianProsjektOppgave\StianProsjektAPI\bin\Debug\net6.0\MessagePack.dll
 C:\Users\stian\source\repos\StianProsjektOppgave\StianProsjektAPI\bin\Debug\net6.0\MessagePack.Annotations.dll
+C:\Users\stian\source\repos\StianProsjektOppgave\StianProsjektAPI\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 C:\Users\stian\source\repos\StianProsjektOppgave\StianProsjektAPI\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.Internal.dll
 C:\Users\stian\source\repos\StianProsjektOppgave\StianProsjektAPI\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
 C:\Users\stian\source\repos\StianProsjektOppgave\StianProsjektAPI\bin\Debug\net6.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
@@ -287,4 +288,3 @@ C:\Users\stian\source\repos\StianProsjektOppgave\StianProsjektAPI\obj\Debug\net6
 C:\Users\stian\source\repos\StianProsjektOppgave\StianProsjektAPI\obj\Debug\net6.0\StianProsjektAPI.pdb
 C:\Users\stian\source\repos\StianProsjektOppgave\StianProsjektAPI\obj\Debug\net6.0\StianProsjektAPI.genruntimeconfig.cache
 C:\Users\stian\source\repos\StianProsjektOppgave\StianProsjektAPI\obj\Debug\net6.0\ref\StianProsjektAPI.dll
-C:\Users\stian\source\repos\StianProsjektOppgave\StianProsjektAPI\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll

@@ -4,14 +4,14 @@
     "C:\\Users\\stian\\source\\repos\\StianProsjektOppgave\\StianProsjektBlazor\\StianProsjektBlazor.csproj": {}
   },
   "projects": {
-    "C:\\Users\\stian\\source\\repos\\StianProsjektOppgave\\StianProsjektAPI\\StianProsjektAPI.csproj": {
+    "C:\\Users\\stian\\source\\repos\\StianProsjektOppgave\\StianProsjektApi\\StianProsjektApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\stian\\source\\repos\\StianProsjektOppgave\\StianProsjektAPI\\StianProsjektAPI.csproj",
-        "projectName": "StianProsjektAPI",
-        "projectPath": "C:\\Users\\stian\\source\\repos\\StianProsjektOppgave\\StianProsjektAPI\\StianProsjektAPI.csproj",
+        "projectUniqueName": "C:\\Users\\stian\\source\\repos\\StianProsjektOppgave\\StianProsjektApi\\StianProsjektApi.csproj",
+        "projectName": "StianProsjektApi",
+        "projectPath": "C:\\Users\\stian\\source\\repos\\StianProsjektOppgave\\StianProsjektApi\\StianProsjektApi.csproj",
         "packagesPath": "C:\\Users\\stian\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\stian\\source\\repos\\StianProsjektOppgave\\StianProsjektAPI\\obj\\",
+        "outputPath": "C:\\Users\\stian\\source\\repos\\StianProsjektOppgave\\StianProsjektApi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\stian\\AppData\\Roaming\\NuGet\\NuGet.Config",

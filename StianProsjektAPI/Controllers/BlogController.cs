@@ -13,7 +13,7 @@ using StianProsjektAPI.Services;
 
 namespace StianProsjektAPI.Controllers;
 
-
+[Authorize]
 [Route("api/[controller]")]
 [ApiController]
 public class BlogController: ControllerBase

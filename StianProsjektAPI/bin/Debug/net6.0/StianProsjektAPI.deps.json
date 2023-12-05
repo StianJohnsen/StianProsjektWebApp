@@ -6,7 +6,7 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v6.0": {
-      "StianProsjektAPI/1.0.0": {
+      "StianProsjektApi/1.0.0": {
         "dependencies": {
           "Microsoft.AspNetCore.Authentication.JwtBearer": "6.0.25",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.25",
@@ -22,7 +22,7 @@
           "Swashbuckle.AspNetCore": "6.5.0"
         },
         "runtime": {
-          "StianProsjektAPI.dll": {}
+          "StianProsjektApi.dll": {}
         }
       },
       "Castle.Core/5.1.1": {
@@ -2854,7 +2854,7 @@
     }
   },
   "libraries": {
-    "StianProsjektAPI/1.0.0": {
+    "StianProsjektApi/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

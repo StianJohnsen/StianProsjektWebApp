@@ -1,0 +1,31 @@
+﻿@inject IJSRuntime jsRuntime
+@inject BlazorService BlazorService
+
+@page "/register"
+@using StianProsjektBlazor.Services
+<PageTitle>Register</PageTitle>
+<h3>Register</h3>
+<input type="text" class="form-control" @bind="userName">Username</input>
+<input type="email" class="form-control" @bind="email">Email</input>
+<input type="password" class="form-control" @bind="password">Password</input>
+<p>Username: @userName</p>
+<p>Email: @email</p>
+<p>Password: @password</p>
+
+
+<input type="button" class="btn btn-primary" value="Register" @onclick="() => BlazorService.RegisterUser(userName, email, password)" />
+<input type="button" class="btn btn-primary" value="Login" @onclick="() => BlazorService.LoginUser(userName, password)" />
+
+
+
+@code {
+    private string userName { get; set; }
+    private string email { get; set; }
+    private string password { get; set; }
+    
+    
+
+
+
+
+}

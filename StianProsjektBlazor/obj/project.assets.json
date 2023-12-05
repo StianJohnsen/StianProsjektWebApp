@@ -4238,7 +4238,7 @@
           "lib/netstandard1.3/System.Xml.XDocument.dll": {}
         }
       },
-      "StianProsjektAPI/1.0.0": {
+      "StianProsjektApi/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
@@ -4255,10 +4255,10 @@
           "Swashbuckle.AspNetCore": "6.5.0"
         },
         "compile": {
-          "bin/placeholder/StianProsjektAPI.dll": {}
+          "bin/placeholder/StianProsjektApi.dll": {}
         },
         "runtime": {
-          "bin/placeholder/StianProsjektAPI.dll": {}
+          "bin/placeholder/StianProsjektApi.dll": {}
         },
         "frameworkReferences": [
           "Microsoft.AspNetCore.App"
@@ -12078,15 +12078,15 @@
         "system.xml.xdocument.nuspec"
       ]
     },
-    "StianProsjektAPI/1.0.0": {
+    "StianProsjektApi/1.0.0": {
       "type": "project",
-      "path": "../StianProsjektAPI/StianProsjektAPI.csproj",
-      "msbuildProject": "../StianProsjektAPI/StianProsjektAPI.csproj"
+      "path": "../StianProsjektApi/StianProsjektApi.csproj",
+      "msbuildProject": "../StianProsjektApi/StianProsjektApi.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
-      "StianProsjektAPI >= 1.0.0"
+      "StianProsjektApi >= 1.0.0"
     ]
   },
   "packageFolders": {

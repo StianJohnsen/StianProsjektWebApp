@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "EoJuslVe4aMZbNJgMnxg1bMUzgw/rsiP+ayWemy+gH8=",
+  "Hash": "7eSM5k00Dca7L5AOfRawHfXugWphkwNdSHlIkrFIBLI=",
   "Source": "StianProsjektBlazor",
   "BasePath": "_content/StianProsjektBlazor",
   "Mode": "Default",
@@ -11,10 +11,10 @@
       "Version": 2,
       "Source": "StianProsjektApi",
       "GetPublishAssetsTargets": "ComputeReferencedStaticWebAssetsPublishManifest;GetCurrentProjectPublishStaticWebAssetItems",
-      "AdditionalPublishProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalPublishProperties": "",
       "AdditionalPublishPropertiesToRemove": "WebPublishProfileFile;TargetFramework",
       "GetBuildAssetsTargets": "GetCurrentProjectBuildStaticWebAssetItems",
-      "AdditionalBuildProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalBuildProperties": "",
       "AdditionalBuildPropertiesToRemove": "WebPublishProfileFile;TargetFramework"
     }
   ],

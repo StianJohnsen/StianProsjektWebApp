@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "WBD8UakIeBlDVZ3J5KQRbd24vaDIDQg71109qbUbpYaX+4UjWsl0c7a2v0MVRdoZHwlLOCcEygQAx5UagNFiDQ==",
+  "dgSpecHash": "XyhwR/0dggatT7YLZtg6M0q5VResw4nTsDkRNcRItEAKLZoJTgu0G9IyZm0i4qq+80zvuz+qgalrYk+WHZCvMA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\stian\\source\\repos\\StianProsjektOppgave\\StianProsjektAPI\\StianProsjektAPI.csproj",
+  "projectFilePath": "C:\\Users\\stian\\source\\repos\\StianProsjektOppgave\\StianProsjektApi\\StianProsjektApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\stian\\.nuget\\packages\\castle.core\\5.1.1\\castle.core.5.1.1.nupkg.sha512",
     "C:\\Users\\stian\\.nuget\\packages\\humanizer\\2.14.1\\humanizer.2.14.1.nupkg.sha512",

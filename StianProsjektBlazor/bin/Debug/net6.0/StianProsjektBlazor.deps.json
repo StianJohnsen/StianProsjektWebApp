@@ -8,7 +8,7 @@
     ".NETCoreApp,Version=v6.0": {
       "StianProsjektBlazor/1.0.0": {
         "dependencies": {
-          "StianProsjektAPI": "1.0.0"
+          "StianProsjektApi": "1.0.0"
         },
         "runtime": {
           "StianProsjektBlazor.dll": {}
@@ -2823,7 +2823,7 @@
           "System.Xml.ReaderWriter": "4.3.0"
         }
       },
-      "StianProsjektAPI/1.0.0": {
+      "StianProsjektApi/1.0.0": {
         "dependencies": {
           "Microsoft.AspNetCore.Authentication.JwtBearer": "6.0.25",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.25",
@@ -4536,7 +4536,7 @@
       "path": "system.xml.xdocument/4.3.0",
       "hashPath": "system.xml.xdocument.4.3.0.nupkg.sha512"
     },
-    "StianProsjektAPI/1.0.0": {
+    "StianProsjektApi/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
