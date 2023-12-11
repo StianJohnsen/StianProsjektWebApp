@@ -1,6 +1,9 @@
 ﻿@page "/counter"
 
+@using System.Security.Claims
 <PageTitle>Counter</PageTitle>
+
+
 
 <h1>Counter</h1>
 
@@ -10,9 +13,21 @@
 
 @code {
     private int currentCount = 0;
+    
+    [CascadingParameter]
+    public Task<AuthenticationState> AuthenticationState { get; set; }
 
-    private void IncrementCount()
+    private async void IncrementCount()
     {
-        currentCount++;
+        var authState = await AuthenticationState;
+        var user = authState.User;
+        if (user.Identity.IsAuthenticated)
+        {
+            currentCount++;
+        }
+        else
+        {
+            currentCount--;
+        }
     }
 }

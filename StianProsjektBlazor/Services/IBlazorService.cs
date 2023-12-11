@@ -1,6 +1,11 @@
-﻿namespace StianProsjektBlazor.Services;
+﻿using StianProsjektAPI.Models.Entities;
+
+namespace StianProsjektBlazor.Services;
 
 public interface IBlazorService
 {
-    public Task RegisterUser(string userName, string email,string passWord);
+    
+    //public Task RefreshToken(string token, string refreshToken);
+
+    public IEnumerable<Blog> GetAllBlogs();
 }

@@ -13,7 +13,6 @@ using StianProsjektAPI.Services;
 
 namespace StianProsjektAPI.Controllers;
 
-[Authorize]
 [Route("api/[controller]")]
 [ApiController]
 public class BlogController: ControllerBase
@@ -37,6 +36,21 @@ public class BlogController: ControllerBase
         var blog = blogService.getBlogById(id);
         return blog;
     }
-    
-    
+
+    [HttpPost]
+    public async void Post([FromBody] BlogViewModel blogViewModel, string userName)
+    {
+        var blog = new Blog
+        {
+            BlogId = blogViewModel.BlogId,
+            BlogName = blogViewModel.BlogName,
+            BlogDescription = blogViewModel.BlogDescription,
+            isOpenForExternalWriters = blogViewModel.isOpenForExternalWriters,
+
+        };
+        await blogService.SaveBlog(blog, userName);
+
+    }
+
+
 }

@@ -1,38 +1,54 @@
 ﻿@page "/getblog"
-
-@using StianProsjektAPI.Models
 @using StianProsjektAPI.Models.Entities
-@inject HttpClient httpclient
+@using StianProsjektBlazor.Services
+@using Blazored.LocalStorage
+@using Microsoft.AspNetCore.Identity
+@using System.Security.Principal
+
+@inject BlazorService BlazorService
+@inject ILocalStorageService localStorageService
+
+
 
 <h1>Test</h1>
+<p>Hello @user.Name</p>
 
-<button @onclick="GetData">Get Data</button>
 
-<p>@resultMessage</p>
-@if (data != null)
+
+
+
+
+
+
+
+
+
+
+@code
 {
-    <ul>
-        @foreach (var blog in data)
-        {
-            <li>@blog.BlogName</li>
-        }
-    </ul>
-}
+    private IEnumerable<Blog> blog;
+    private string token;
 
-@code {
-    private IEnumerable<Blog>? data;
-    private string resultMessage = "";
+    private IIdentity user;
+    [CascadingParameter] private Task<AuthenticationState> authenticationStateTask { get; set; }
 
-    private async Task GetData()
+    protected override async Task OnInitializedAsync()
     {
-        try
-        {
-            data = await httpclient.GetFromJsonAsync<IEnumerable<Blog>>("https://localhost:7241/api/Blog");
-            resultMessage = "Success";
-        }
-        catch (Exception e)
-        {
-            resultMessage = e.Message;
-        }
+        await LogUserAuthenticationState();
     }
+    private async Task LogUserAuthenticationState()
+    {
+        var authState = await authenticationStateTask;
+        user = authState.User.Identity;
+        Console.WriteLine(user);
+    }
+
+
+
+
+
+
+
+
+
 }

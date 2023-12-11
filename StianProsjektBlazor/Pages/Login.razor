@@ -1,5 +1,4 @@
-﻿
-@page "/register"
+﻿@page "/login"
 
 @inject IAuthenticationService AuthenticationService
 @inject NavigationManager NavigationManager
@@ -8,13 +7,11 @@
 @using StianProsjektBlazor.Services
 @using StianProsjektAPI.Models.ViewModels
 @using StianProsjektBlazor.AuthProviders
-<PageTitle>Register</PageTitle>
-<h3>Register</h3>
-<input type="text" class="form-control" @bind="RegisterViewModel.username">Username</input>
-<input type="email" class="form-control" @bind="RegisterViewModel.email">Email</input>
-<input type="password" class="form-control" @bind="RegisterViewModel.password">Password</input>
+<PageTitle>Login</PageTitle>
+<h3>Login</h3>
+<input type="text" class="form-control" @bind="loginViewModel.Username">Username</input>
+<input type="password" class="form-control" @bind="loginViewModel.Password">Password</input>
 <p>Username: @userName</p>
-<p>Email: @email</p>
 <p>Password: @password</p>
 
 <p>Error: @Error</p>
@@ -27,7 +24,7 @@
 
 @code {
 
-    private RegisterViewModel RegisterViewModel = new RegisterViewModel();
+    private LoginViewModel loginViewModel = new LoginViewModel();
     
     
     
@@ -42,17 +39,21 @@
         
         ShowError = false;
         
-        var result = await AuthenticationService.RegisterUser(RegisterViewModel);
+        var result = await AuthenticationService.Login(loginViewModel);
 
         if (result.success)
         {
-            NavigationManager.NavigateTo("/login");
+            NavigationManager.NavigateTo("/");
         }
         
-        else
-        {
-            Error = result.message;
-            ShowError = true;
-        }
+
+
+
     }
+    
+    
+
+
+
+
 }

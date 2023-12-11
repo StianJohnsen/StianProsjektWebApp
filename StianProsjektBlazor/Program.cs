@@ -1,5 +1,9 @@
+using Blazored.LocalStorage;
 using Microsoft.AspNetCore.Components;
+using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.Components.Web;
+using StianProsjektBlazor;
+using StianProsjektBlazor.AuthProviders;
 using StianProsjektBlazor.Data;
 using StianProsjektBlazor.Services;
 
@@ -11,6 +15,10 @@ builder.Services.AddServerSideBlazor();
 builder.Services.AddSingleton<WeatherForecastService>();
 builder.Services.AddScoped<BlazorService>();
 builder.Services.AddHttpClient();
+builder.Services.AddBlazoredLocalStorage();
+builder.Services.AddAuthorizationCore();
+builder.Services.AddScoped<IAuthenticationService, AuthenticationService>();
+builder.Services.AddScoped<AuthenticationStateProvider, AuthStateProvider>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

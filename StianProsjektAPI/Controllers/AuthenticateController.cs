@@ -46,7 +46,6 @@ public class AuthenticateController: ControllerBase
             {
                 authClaims.Add(new Claim(ClaimTypes.Role, userRole));
             }
-            var authSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["JWT:Secret"]));
             var token = CreateToken(authClaims);
             var refreshToken = GenerateRefreshToken();
 
@@ -61,7 +60,8 @@ public class AuthenticateController: ControllerBase
             {
                 Token = new JwtSecurityTokenHandler().WriteToken(token),
                 RefreshToken = refreshToken,
-                Expiration = token.ValidTo
+                Expiration = token.ValidTo,
+                Success = true
             });
         }
         return Unauthorized();
@@ -71,38 +71,38 @@ public class AuthenticateController: ControllerBase
     [Route("register")]
     public async Task<IActionResult> Register([FromBody] RegisterViewModel registerViewModel)
     {
-        var userExists = await _userManager.FindByNameAsync(registerViewModel.Username);
+        var userExists = await _userManager.FindByNameAsync(registerViewModel.username);
         if (userExists != null)
-            return StatusCode(StatusCodes.Status500InternalServerError, new Response { Status = "Error", Message = "User already exists!" });
+            return StatusCode(StatusCodes.Status500InternalServerError, new Response { Success = false, Message = "User already exists!" });
         ApplicationUser user = new()
         {
-            Email = registerViewModel.Email,
+            Email = registerViewModel.email,
             SecurityStamp = Guid.NewGuid().ToString(),
-            UserName = registerViewModel.Username
+            UserName = registerViewModel.username
         };
-        var result = await _userManager.CreateAsync(user, registerViewModel.Password);
+        var result = await _userManager.CreateAsync(user, registerViewModel.password);
         if (!result.Succeeded)
-            return StatusCode(StatusCodes.Status500InternalServerError, new Response { Status = "Error", Message = "User creation failed! Please check user details and try again." });
-        return Ok(new Response { Status = "Success", Message = "User created successfully!" });
+            return StatusCode(StatusCodes.Status500InternalServerError, new Response { Success = false, Message = "User creation failed! Please check user details and try again." });
+        return Ok(new Response { Success  = true, Message = "User created successfully!" });
     }
 
     [HttpPost]
     [Route("register-admin")]
     public async Task<IActionResult> RegisterAdmin([FromBody] RegisterViewModel registerViewModel)
     {
-        var userExists = await _userManager.FindByNameAsync(registerViewModel.Username);
+        var userExists = await _userManager.FindByNameAsync(registerViewModel.username);
         if (userExists != null)
-            return StatusCode(StatusCodes.Status500InternalServerError, new Response { Status = "Error", Message = "User already exists!" });
+            return StatusCode(StatusCodes.Status500InternalServerError, new Response { Success = false, Message = "User already exists!" });
 
         ApplicationUser user = new()
         {
-            Email = registerViewModel.Email,
+            Email = registerViewModel.email,
             SecurityStamp = Guid.NewGuid().ToString(),
-            UserName = registerViewModel.Username
+            UserName = registerViewModel.username
         };
-        var result = await _userManager.CreateAsync(user, registerViewModel.Password);
+        var result = await _userManager.CreateAsync(user, registerViewModel.password);
         if (!result.Succeeded)
-            return StatusCode(StatusCodes.Status500InternalServerError, new Response { Status = "Error", Message = "User creation failed! Please check user details and try again." });
+            return StatusCode(StatusCodes.Status500InternalServerError, new Response { Success = false, Message = "User creation failed! Please check user details and try again." });
         if (!await _roleManager.RoleExistsAsync(UserRoles.Admin))
             await _roleManager.CreateAsync(new IdentityRole(UserRoles.Admin));
         if (!await _roleManager.RoleExistsAsync(UserRoles.User))
@@ -117,7 +117,7 @@ public class AuthenticateController: ControllerBase
         {
             await _userManager.AddToRoleAsync(user, UserRoles.User);
         }
-        return Ok(new Response{ Status = "Success", Message = "User created successfully!" });
+        return Ok(new Response{ Success = true, Message = "User created successfully!" });
     }
 
     [HttpPost]
@@ -237,5 +237,14 @@ public class AuthenticateController: ControllerBase
             throw new SecurityTokenException("Invalid token");
         }
         return principal;
+    }
+
+    private List<Claim> GetClaims(ApplicationUser user)
+    {
+        var claims = new List<Claim>
+        {
+            new Claim(ClaimTypes.Name, user.UserName)
+        };
+        return claims;
     }
 }
